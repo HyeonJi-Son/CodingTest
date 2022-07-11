@@ -51,13 +51,21 @@ public class Test3_20220709 {
         int[][] arr1 = {{1, 2}, {2, 3}};
         int[][] arr2 = {{3, 4}, {5, 6}};
         int[][] result = new int[2][2];
+        //결과 값을 넣어줄 array를 선언한다. 2개 크기(앞)의 배열을 2개 가질 수 있는(뒤) 2차원 배열 할당.
 
         for(int i = 0; i < result.length; i++){
+            //result배열의 길이보다 작을 때 까지 i가 +1씩 커지며 반복되는 for문
             for(int j = 0; j < result.length; j++){
+                //result배열의 길이보다 작을 때 까지 j가 +1씩 커지며 반복되는 for문
                 result[i][j] = arr1[i][j] + arr2[i][j];
+                //result[i]번 째 인덱스 = arr1의 i번째 인덱스와 같은 값
+                //result[j]번 째 인덱스 = arr2의 j번째 인덱스와 같은 값
                 System.out.println(result[i][j]);
+                //이를 출력
             }
         }
+
+        //이것을 배열의 길이만큼 반복하여 4개의 결과를 모두 확인할 수 있게 된다.
 
         //왜 foreach까지 써가며 멀리멀리 돌아가려고 했을까...
 
