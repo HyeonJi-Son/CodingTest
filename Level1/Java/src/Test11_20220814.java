@@ -18,12 +18,20 @@ public class Test11_20220814 {
     3은 양의 정수의 제곱이 아니므로, -1을 리턴합니다.
      */
 
-    public long solution(long n) {
-        //반복문을 돌면서 x라는 정수가 최대까지 커질 때
-        //정수들의 제곱 중 n과 같은 숫자가 있다면 반복문을 빠져나오도록 만들어야 한다.
-        //하지만 else 제곱이 아닌 숫자의 경우 -1이 리턴되도록 한다.
+    /*
+    반복문을 돌면서 x라는 정수가 최대까지 커질 때
+    정수들의 제곱 중 n과 같은 숫자가 있다면 반복문을 빠져나오도록 만들어야 한다.
+    하지만 else 제곱이 아닌 숫자의 경우 -1이 리턴되도록 한다.
 
-        long answer = 0;
-        return answer;
+    //내가 처음에 생각한 풀이... 물론 오답이다...
+     */
+
+
+    public long solution(long n) {
+          //Math.pow() <- 제곱근을 구할 수 있는 메소드 / Math.sqrt() <- 제곱근(루트)를 구할 수 있는 메소드 이다.
+        if (Math.pow((int)Math.sqrt(n), 2) == n) { //만약( long n의 제곱근의 2승) == n과 같은 경우 <- 이 조건은 n이 정수 x의 제곱이라는 조건을 맞출 수 있음.
+            return (long) Math.pow(Math.sqrt(n) + 1, 2); //이 경우에는 long n에 +1을 더한 값의 2승 <- 이 값을 return해라.
+        }
+        else { return -1; } //그 외에는 -1을 return 해라.
     }
 }
