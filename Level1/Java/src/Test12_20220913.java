@@ -14,4 +14,9 @@ public class Test12_20220913 {
      */
 
 
+    public static void main(String[] args) {
+        int x;
+
+        //System.out.println("김서방은 %d에 있다.", x);
+    }
 }
