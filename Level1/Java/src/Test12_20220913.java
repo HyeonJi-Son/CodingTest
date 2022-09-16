@@ -14,8 +14,16 @@ public class Test12_20220913 {
      */
 
 
-    public static void main(String[] args) {
-        int x;
+    public static String main(String[] seoul) {
+        String answer = "";
+
+        for(int i=0; i<seoul.length; i++){ //seoul의 길이만큼 루프하는 for 반복문을 만든다.
+            if(seoul[i].equals("Kim")) { //만약 seoul의 i번째 인덱스가 "Kim"과 같다면
+                answer = "김서방은 " + i + "에 있다"; //answer의 값을 "김서방은 " + i + "에 있다" 로 선언하도록 한다.
+            }
+        }
+
+        return answer; //answer의 값을 return한다.
 
         //System.out.println("김서방은 %d에 있다.", x);
     }
