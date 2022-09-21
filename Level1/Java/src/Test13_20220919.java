@@ -12,5 +12,22 @@ n	return
 4	"수박수박"
      */
 
+    //반복문의 루프 회수가 0이거나 짝수일 때는 수, 홀수일 때는 박을 answer에 더하도록 처리하면 된다.
+
+    public String solution(int n) {
+        String answer = "";
+
+        for (int i = 0; i < n; i++){
+            if(i%2 == 0){
+                answer += "수";
+            }
+            if(i%2 == 1){ //if(i%2 == 1) 조건문을 사용하는 것도 괜찮지만 홀, 짝 두가지 경우만 나올 상황이니 else로도 괜찮을 듯.
+                answer += "박";
+            }
+        }
+
+        return answer;
+    }
+
 
 }
