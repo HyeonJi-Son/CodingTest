@@ -21,13 +21,19 @@ n	return
             if(i%2 == 0){
                 answer += "수";
             }
-            if(i%2 == 1){ //if(i%2 == 1) 조건문을 사용하는 것도 괜찮지만 홀, 짝 두가지 경우만 나올 상황이니 else로도 괜찮을 듯.
+           else{ //if(i%2 == 1) 조건문을 사용하는 것도 괜찮지만 홀, 짝 두가지 경우만 나올 상황이니 else로도 괜찮을 듯.
                 answer += "박";
             }
         }
 
         return answer;
     }
+
+    /*
+    개선점: Warning:(22, 24) String concatenation '+=' in loop
+
+    루프에서 '+'를 사용하여 문자열을 연결하는 것은 좋지 않은 코드라고 한다. + 가 아니라 String Builder를 사용하는 편이 좋은 선택지라는 듯.
+     */
 
 
 }
