@@ -13,7 +13,19 @@ arr	return
      */
 
     public double solution(int[] arr) {
+        /*
+        arr이 담은 배열의 평균값을 구하려면 "arr 내의 모든 숫자를 더한 값/arr길이값" 을 구하도록 해야한다.
+         */
+
         double answer = 0;
+        int sum = 0;
+
+        for(int i = 0; i < arr.length; i++){
+            sum += arr[i];
+        }
+
+        answer = sum/arr.length;
+
         return answer;
     }
 
