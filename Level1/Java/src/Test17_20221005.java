@@ -19,4 +19,26 @@ numbers	result
 
 1, 2, 3이 numbers에 없으므로, 1 + 2 + 3 = 6을 return 해야 합니다.
      */
+
+    public double solution(int[] numbers) {
+        /*
+        0~9까지의 숫자를 모두 합친 다음 배열에 들어있는 숫자를 빼기하는 방식으로 풀이하자.
+        0~9를 합친 숫자는 45
+         */
+
+        int answer=0;
+        int num = 45;
+
+        for(int i = 0; i <= numbers.length; i++){
+            //0인 i가 루프마다 +1씩 커진다. numbers 배열과 같거나 작은 길이가 될 때 까지
+            num -= numbers[i]; //num(초기45)의 값에서 numbers의[i]번째 배열에 들어있는 숫자를 빼기한다.
+        }
+
+        answer = num;
+
+
+        return answer;
+    }
+
+
 }
