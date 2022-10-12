@@ -16,4 +16,11 @@ s	n	result
 "z"	1	"a"
 "a B z"	4	"e F d"
      */
+
+    class Solution {
+        public String solution(String s, int n) {
+            String answer = "";
+            return answer;
+        }
+    }
 }
