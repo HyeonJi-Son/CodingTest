@@ -17,10 +17,37 @@ s	n	result
 "a B z"	4	"e F d"
      */
 
+    /*
+    각각의 문자열에 해당하는 아스키 코드 +n 시키면 출력 결과가 n씩 밀린 결과로 나오지 않을까.
+    1. 문자열을 각각 하나씩 떼어준다.
+    */
+
     class Solution {
         public String solution(String s, int n) {
             String answer = "";
-            return answer;
+
+            for(int i=0; i<s.length(); i++) { //i는 0부터 시작해서 루프마다 +1씩 증감. 문자열 s의 길이보다 작은 동안 반복된다.
+                char ch = s.charAt(i); //ch의 값은 문자열 s의 i번째 문자열이다.(String을 char형으로 바꿔준다.)
+
+                if(Character.isLowerCase(ch)) { //isLowerCase <-소문자인지 구별
+                    //만약 ch의 값이 소문자인 경우 아래의 실행문이 돌아간다.
+                    ch = (char) ((ch - 'a' + n) % 26 + 'a');
+                    //ch = (char형으로 변경) ((ch의 값에서 'a'를 빼고 + 거리를 더한다.) % 알파벳 숫자만큼 나눠주고 다시 + 'a'를 더한다.)
+                        //코딩은 0부터 거리를 계산하기 때문에 'a'(그러니까 1만큼?)를 뺏다가 다시 더하는 듯.
+
+                    //answer += (char)(ch-26+n); <-ch에서 알파벳 개수(26)을 빼주고 거리(n)을 더해주는 방식도 있다.
+                    //하지만 이것은 해당 문제의 길이가 25로 제한이 있어서 가능한 것이다.
+                    //이와 같은 제한이 없는 경우 %26 나머지 연산을 해주는 쪽이 재사용성이 높다.
+
+                } else if(Character.isUpperCase(ch)) { //isUpperCase <- 대문자인지 구별
+                    //만약 ch의 값이 대문자인 경우 아래의 실행문이 돌아간다.
+                    ch = (char) ((ch - 'A' + n) % 26 + 'A');
+                }
+
+                answer += ch; //반복문을 돌 때 String answer 문자열에 ch를 값을 더한다.
+            }
+
+            return answer; //answer에 더해진 모든 ch의 값이 출력된다.
         }
     }
 }
