@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Test20_20221014 {
     /*
     자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후,
@@ -40,7 +42,21 @@ n (10진법)	n (3진법)	앞뒤 반전(3진법)	10진법으로 표현
             3. 반전된 3진법을 다시 10진법으로 바꾼다.
              */
 
-
+            ArrayList<Integer> list = new ArrayList<>(); //List를 선언한다.
+            // 10진법 -> 3진법
+            while(n != 0) { //만약 int n이 0이 아닌 경우가 true인 경우 계속 돌아가는 반복문
+                list.add(n%3);  //list에 add한다. n을 3으로 나눈 나머지 값을.
+                //A%B = A 나누기 B의 나머지
+                n /= 3; //그리고 n의 값을 바꿔준다. n 나누기 3의 값으로.
+                //이렇게 저장되면 list에 우선 앞뒤가 뒤집힌 순서로 저장된다.
+            }
+            // 3진법 -> 10진법
+            int num = 1; //값이 1인 int타입 변수 num을 선언한다.
+            for(int i=list.size()-1;i>=0;i--) {
+                //int i는 list의 크기 -1 과 같다; i가 0보다 크거나 같은동안; 반복마다 -1씩 감소되며 루프한다,
+                answer += list.get(i)*num; // answer에 더한다. list에서 i번째에 해당하는 숫자x num(=1)값을
+                num *= 3; // num값에 3을 곱한다.
+            }
             return answer;
         }
     }
